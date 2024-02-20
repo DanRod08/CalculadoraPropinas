@@ -10,27 +10,26 @@ import XCTest
 
 final class CalculadoraPropinasTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testCalcularTotalConPropina() {
+        let monto = "100"
+        let porcentaje = 15.0
+        let dividirCuenta = false
+        let propinaPersonalizada = false
+        let montoPropina = ""
+        
+        let resultado = Calculos.calcularTotalConPropina(montoCuenta: monto, porcentajePropina: porcentaje, dividirCuenta: dividirCuenta, propinaPersonalizada: propinaPersonalizada, propinaPersonalizadaMonto: montoPropina)
+        XCTAssertEqual(resultado, 115.0)
         }
-    }
 
+    func testTotalPropina() {
+        let monto = "100"
+        let porcentaje = 15.0
+        let dividirCuenta = false
+        let propinaPersonalizada = false
+        let montoPropina = ""
+    
+        let resultado = Calculos.calcularTotalPropina(montoCuenta: monto, porcentajePropina: porcentaje, propinaPersonalizada: propinaPersonalizada, propinaPersonalizadaMonto: montoPropina, dividirCuenta: dividirCuenta)
+        XCTAssertEqual(resultado, 15.0)
+    }
+    
 }
