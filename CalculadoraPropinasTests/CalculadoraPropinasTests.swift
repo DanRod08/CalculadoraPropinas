@@ -32,5 +32,27 @@ final class CalculadoraPropinasTests: XCTestCase {
         XCTAssertEqual(resultado, 15.0)
     }
     
-//nuevos cambios 
+    func testCalcularTotalConPropina3() {
+        let monto = "100"
+        let porcentaje = 15.0
+        let dividirCuenta = false
+        let propinaPersonalizada = false
+        let montoPropina = ""
+        
+        let resultado = Calculos.calcularTotalConPropina(montoCuenta: monto, porcentajePropina: porcentaje, dividirCuenta: dividirCuenta, propinaPersonalizada: propinaPersonalizada, propinaPersonalizadaMonto: montoPropina)
+        XCTAssertEqual(resultado, 115.0)
+        }
+
+    func testTotalPropina4() {
+        let monto = "100"
+        let porcentaje = 15.0
+        let dividirCuenta = false
+        let propinaPersonalizada = false
+        let montoPropina = ""
+    
+        let resultado = Calculos.calcularTotalPropina(montoCuenta: monto, porcentajePropina: porcentaje, propinaPersonalizada: propinaPersonalizada, propinaPersonalizadaMonto: montoPropina, dividirCuenta: dividirCuenta)
+        XCTAssertEqual(resultado, 15.0)
+    }
+    
+    //testing
 }
